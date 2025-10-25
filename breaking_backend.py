@@ -6,13 +6,13 @@ import os
 import base64
 import streamlit as st
 from github import Github,Auth
-import google.generativeai as genai
+from google import genai
 
 #load_dotenv()
 
 def create_get_gemini_model():
     genai.configure(api_key=st.secrets['google_gemini_api_key'])
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     return model
 
 def create_get_github_object():
